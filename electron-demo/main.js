@@ -1,10 +1,14 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('node:path')
 
 const createWindow = () => {
   // 创建窗口
   const win = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    // webPreferences: {
+    //   preload: path.join(__dirname, 'lib/vconsole.min.js')
+    // }
   })
 
   win.loadFile('index.html')
